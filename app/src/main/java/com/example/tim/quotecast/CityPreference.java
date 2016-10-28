@@ -4,9 +4,7 @@ package com.example.tim.quotecast;
 import android.app.Activity;
 import android.content.SharedPreferences;
 
-/**
- * Created by Tim on 2016-10-17.
- */
+
 public class CityPreference {
 
     SharedPreferences prefs;

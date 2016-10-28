@@ -5,18 +5,6 @@
     android:layout_height="wrap_content" >
 
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/etCity"
-        tools:text="Write a city "
-        android:hint="CityName"
-        android:layout_marginLeft="20dp"
-        android:textAlignment="textStart"
-        android:layout_below="@+id/textView" />
-
     <TextView
         android:text="Choose a city"
         android:layout_width="wrap_content"
@@ -26,7 +14,22 @@
         android:textAlignment="center"
         android:textSize="18sp"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/dialogButtonOK" />
+        android:layout_alignStart="@+id/dialogButtonOK"
+        android:layout_marginLeft="-10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/etCity"
+        tools:text="Write a city "
+        android:hint="CityName"
+        android:layout_marginLeft="30dp"
+        android:textAlignment="textStart"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -35,8 +38,8 @@
         android:id="@+id/dialogButtonOK"
         android:theme="@style/AlertDialog.AppCompat"
         android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_below="@+id/etCity"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="11dp" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

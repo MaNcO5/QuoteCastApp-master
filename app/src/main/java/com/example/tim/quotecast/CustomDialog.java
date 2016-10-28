@@ -1,21 +1,13 @@
 package com.example.tim.quotecast;
 
 import android.app.Dialog;
-import android.app.Fragment;
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-/**
- * Created by Tim on 2016-10-14.
- */
+
 public class CustomDialog {
 
     private WeatherActivity weather;
