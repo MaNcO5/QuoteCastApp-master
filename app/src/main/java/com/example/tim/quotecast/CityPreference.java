@@ -21,7 +21,7 @@ public class CityPreference {
 
 
     String getCity() {
-        return prefs.getString("city", "Sydney, AU");
+        return prefs.getString("city", "Malmö, SE");
         }
 
 

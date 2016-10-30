@@ -32,6 +32,7 @@ public class WeatherFragment extends Fragment {
     TextView detailsField2;
     TextView currentTemperatureField;
     TextView weatherIcon;
+    TextView txtQuote;
 
     Handler handler;
 
@@ -44,19 +45,40 @@ public class WeatherFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_weather, container, false);
         cityField = (TextView) rootView.findViewById(R.id.city_field);
+        txtQuote = (TextView) rootView.findViewById(R.id.txtQuote);
         updatedField = (TextView) rootView.findViewById(R.id.updated_field);
         detailsField = (TextView) rootView.findViewById(R.id.details_field);
         detailsField2 = (TextView) rootView.findViewById(R.id.details_field2);
         currentTemperatureField = (TextView) rootView.findViewById(R.id.current_temperature_field);
         weatherIcon = (TextView) rootView.findViewById(R.id.weather_icon);
 
+
         weatherFont = Typeface.createFromAsset(getActivity().getAssets(), "weather.ttf");
 
         weatherIcon.setTypeface(weatherFont);
 
         updateWeatherData(new CityPreference(getActivity()).getCity());
+        updateQuote(new QuotePreference(getActivity()).getQuote());
 
         return rootView;
+    }
+
+    private void updateQuote(final String quote){
+        new Thread(){
+            public void run(){
+                final JSONObject json = Quotes.getJSON(getActivity(), quote);
+                if (json == null){
+                    System.out.println("No Quotes");
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            renderWeather(json);
+
+                        }
+                    });
+                }
+            }
+        }.start();
     }
 
 
@@ -107,6 +129,7 @@ public class WeatherFragment extends Fragment {
             setWeatherIcon(details.getInt("id"),
                     json.getJSONObject("sys").getLong("sunrise") * 1000,
                     json.getJSONObject("sys").getLong("sunset") * 1000);
+            txtQuote.setText("contents:" + main.getString("quote"));
 
         } catch (Exception e) {
             Log.e("SimpleWeather", "One or more fields not found in the JSON data");
@@ -151,5 +174,9 @@ public class WeatherFragment extends Fragment {
 
     public void changeCity(String city){
         updateWeatherData(city);
+    }
+
+    public void changeQuote(String quote) {
+        updateQuote(quote);
     }
 }

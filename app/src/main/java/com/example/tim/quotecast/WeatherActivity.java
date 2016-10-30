@@ -56,4 +56,12 @@ public class WeatherActivity extends AppCompatActivity {
         wf.changeCity(city);
         new CityPreference(this).setCity(city);
     }
+    public void setQuote(String quote){
+        WeatherFragment wf =(WeatherFragment)getSupportFragmentManager()
+                .findFragmentById(R.id.container);
+
+        wf.changeQuote(quote);
+        new QuotePreference(this).setQuote(quote);
+
+    }
 }

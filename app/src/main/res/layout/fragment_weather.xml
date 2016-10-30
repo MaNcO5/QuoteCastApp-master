@@ -2,22 +2,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@drawable/background"
     tools:context="com.example.tim.quotecast.WeatherFragment">
 
-
-    <TextView
-            android:id="@+id/city_field"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="City"
-        android:textColor="@android:color/white"
-        android:layout_marginTop="15dp"
-        android:textSize="30sp" />
 
     <TextView
             android:id="@+id/updated_field"
@@ -94,5 +82,26 @@
         android:layout_below="@+id/details_field"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp" />
+
+    <TextView
+            android:id="@+id/city_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="City"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="17dp"
+        android:textSize="30sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="txtQ"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/txtQuote"
+        android:layout_below="@+id/details_field2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="131dp" />
 
 </RelativeLayout>
